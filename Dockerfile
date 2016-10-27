@@ -1,7 +1,7 @@
 FROM selenium/standalone-chrome:3.0.0-dubnium
 
 RUN sudo apt-get update -y
-RUN sudo apt-get install -y curl
+RUN sudo apt-get install -y curl lsof
 
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
@@ -17,7 +17,7 @@ RUN sudo npm install -g cordova
 RUN mkdir config
 
 WORKDIR /home/seluser/api-test/test_app
-RUN cordova platform remove browser
+# RUN cordova platform remove browser
 RUN cordova platform add browser
 RUN lsof platforms/browser/www/*
 RUN rm -rf platforms/browser/www

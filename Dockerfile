@@ -13,6 +13,7 @@ RUN git clone https://github.com/jhellar/api-test.git
 WORKDIR /home/seluser/api-test
 RUN npm install
 RUN sudo npm install -g cordova
+RUN sudo npm install -g rimraf
 
 RUN mkdir config
 

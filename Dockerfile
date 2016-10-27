@@ -19,6 +19,7 @@ RUN mkdir config
 WORKDIR /home/seluser/api-test/test_app
 RUN cordova platform remove browser
 RUN cordova platform add browser
+RUN rm -rf platforms/browser/www
 
 WORKDIR /home/seluser/api-test/test_app/platforms/browser/www
 RUN ls -al
